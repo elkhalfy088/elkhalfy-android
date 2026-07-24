@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="230dp">
+
+    <ImageView android:id="@+id/iv_bg"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#CC0D0F16"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="14dp" android:paddingEnd="14dp">
+
+        <ImageView android:id="@+id/iv_poster"
+            android:layout_width="100dp" android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_card"/>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView android:id="@+id/tv_badge"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/bg_accent_pill"
+                android:text="@string/top_rated"
+                android:textColor="@color/bg" android:textSize="10sp" android:textStyle="bold"
+                android:paddingStart="9dp" android:paddingEnd="9dp"
+                android:paddingTop="3dp" android:paddingBottom="3dp"/>
+
+            <TextView android:id="@+id/tv_title"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/text" android:textSize="15sp" android:textStyle="bold"
+                android:maxLines="2" android:ellipsize="end"/>
+
+            <TextView android:id="@+id/tv_rating"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_rating_badge"
+                android:textColor="@color/accent2" android:textSize="10sp" android:textStyle="bold"
+                android:paddingStart="6dp" android:paddingEnd="6dp"
+                android:paddingTop="2dp" android:paddingBottom="2dp"/>
+
+            <Button android:id="@+id/btn_play"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_accent_pill"
+                android:text="@string/play"
+                android:textColor="@color/bg" android:textSize="12sp" android:textStyle="bold"
+                android:paddingStart="14dp" android:paddingEnd="14dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

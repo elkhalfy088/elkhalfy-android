@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_live"
+        android:icon="@drawable/ic_tv"
+        android:title="@string/live_tv" />
+    <item
+        android:id="@+id/nav_movies"
+        android:icon="@drawable/ic_film"
+        android:title="@string/movies" />
+    <item
+        android:id="@+id/nav_series"
+        android:icon="@drawable/ic_monitor"
+        android:title="@string/series" />
+    <item
+        android:id="@+id/nav_matches"
+        android:icon="@drawable/ic_trophy"
+        android:title="@string/matches" />
+</menu>

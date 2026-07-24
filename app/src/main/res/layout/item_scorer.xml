@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingStart="12dp" android:paddingEnd="12dp"
+    android:paddingTop="9dp" android:paddingBottom="9dp">
+    <TextView android:id="@+id/tv_rank"
+        android:layout_width="20dp" android:layout_height="wrap_content"
+        android:textColor="@color/text3" android:textSize="12sp" android:textStyle="bold"
+        android:gravity="center"/>
+    <ImageView android:id="@+id/iv_photo"
+        android:layout_width="36dp" android:layout_height="36dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_channel_logo"
+        android:scaleType="centerCrop"/>
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+        <TextView android:id="@+id/tv_player_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/text" android:textSize="13sp" android:textStyle="bold"
+            android:maxLines="1" android:ellipsize="end"/>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginTop="2dp">
+            <ImageView android:id="@+id/iv_team_logo"
+                android:layout_width="13dp" android:layout_height="13dp"
+                android:scaleType="centerInside"/>
+            <TextView android:id="@+id/tv_team_name"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/text2" android:textSize="11sp"
+                android:maxLines="1" android:ellipsize="end"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center">
+        <TextView android:id="@+id/tv_goals"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/accent2" android:textSize="18sp" android:textStyle="bold"
+            android:gravity="center"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="هدف" android:textColor="@color/text3" android:textSize="10sp"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

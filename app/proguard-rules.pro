@@ -1,0 +1,3 @@
+-keep class com.elkhalfy.app.data.** { *; }
+-keep class androidx.media3.** { *; }
+-dontwarn com.google.android.exoplayer2.**

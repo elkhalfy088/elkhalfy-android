@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000" android:keepScreenOn="true">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:use_controller="false"
+        app:resize_mode="fit"
+        android:background="#000000"/>
+
+    <!-- Buffering overlay -->
+    <FrameLayout android:id="@+id/buf_overlay"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#40000000" android:visibility="gone" android:gravity="center">
+        <ProgressBar android:layout_width="56dp" android:layout_height="56dp"
+            android:layout_gravity="center" android:indeterminate="true"
+            android:indeterminateTint="@color/accent"/>
+    </FrameLayout>
+
+    <!-- Error overlay -->
+    <LinearLayout android:id="@+id/err_overlay"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#E0000000" android:gravity="center"
+        android:orientation="vertical" android:padding="20dp" android:visibility="gone">
+        <ImageView android:layout_width="44dp" android:layout_height="44dp"
+            android:src="@drawable/ic_tv" android:tint="@color/text3"/>
+        <TextView android:id="@+id/tv_err_msg"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="تعذر تشغيل الفيديو" android:textColor="@color/text2"
+            android:textSize="13sp" android:textAlignment="center"/>
+        <Button android:id="@+id/btn_retry"
+            android:layout_width="wrap_content" android:layout_height="36dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_accent_pill"
+            android:text="@string/retry"
+            android:textColor="@color/bg" android:textSize="12sp" android:textStyle="bold"
+            android:paddingStart="16dp" android:paddingEnd="16dp"/>
+    </LinearLayout>
+
+    <!-- Controls overlay -->
+    <LinearLayout android:id="@+id/ctrl_overlay"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_player_gradient"
+        android:visibility="invisible">
+
+        <!-- Top bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
+            android:gravity="center_vertical" android:paddingStart="12dp" android:paddingEnd="12dp">
+            <ImageButton android:id="@+id/btn_back"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:background="@drawable/bg_ctrl_btn"
+                android:src="@drawable/ic_back" android:tint="@color/white"
+                android:contentDescription="back"/>
+            <TextView android:id="@+id/tv_channel_name"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="9dp"
+                android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold"
+                android:maxLines="1" android:ellipsize="end"/>
+            <TextView android:id="@+id/tv_live_pill"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="#FFEF4444" android:text="LIVE"
+                android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold"
+                android:paddingStart="8dp" android:paddingEnd="8dp"
+                android:paddingTop="3dp" android:paddingBottom="3dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- Center controls -->
+        <LinearLayout android:id="@+id/ctrl_center"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center" android:orientation="horizontal" android:gap="28dp">
+            <ImageButton android:id="@+id/btn_skip_back"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:background="@drawable/bg_ctrl_btn_round"
+                android:src="@drawable/ic_replay10" android:tint="@color/white"/>
+            <ImageButton android:id="@+id/btn_play_pause"
+                android:layout_width="52dp" android:layout_height="52dp"
+                android:background="@drawable/bg_pp_btn"
+                android:src="@drawable/ic_pause" android:tint="@color/white"/>
+            <ImageButton android:id="@+id/btn_skip_fwd"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:background="@drawable/bg_ctrl_btn_round"
+                android:src="@drawable/ic_forward10" android:tint="@color/white"/>
+        </LinearLayout>
+
+        <!-- Bottom bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Seek bar (for VOD) -->
+            <LinearLayout android:id="@+id/seek_container"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingStart="14dp" android:paddingEnd="14dp"
+                android:paddingBottom="4dp" android:gravity="center_vertical"
+                android:orientation="horizontal" android:visibility="gone">
+                <TextView android:id="@+id/tv_cur_time"
+                    android:layout_width="44dp" android:layout_height="wrap_content"
+                    android:text="0:00" android:textColor="#80FFFFFF" android:textSize="10sp"
+                    android:gravity="center"/>
+                <SeekBar android:id="@+id/seek_bar"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progressTint="@color/accent"
+                    android:thumbTint="@color/accent2"
+                    android:progressBackgroundTint="#40FFFFFF"/>
+                <TextView android:id="@+id/tv_dur_time"
+                    android:layout_width="44dp" android:layout_height="wrap_content"
+                    android:text="0:00" android:textColor="#80FFFFFF" android:textSize="10sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- Bottom buttons -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingBottom="8dp">
+                <ImageButton android:id="@+id/btn_mute"
+                    android:layout_width="36dp" android:layout_height="36dp"
+                    android:background="@drawable/bg_ctrl_btn"
+                    android:src="@drawable/ic_volume" android:tint="@color/white"/>
+                <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <ImageButton android:id="@+id/btn_quality"
+                    android:layout_width="36dp" android:layout_height="36dp"
+                    android:background="@drawable/bg_ctrl_btn"
+                    android:src="@drawable/ic_settings" android:tint="@color/white"
+                    android:layout_marginEnd="8dp"/>
+                <ImageButton android:id="@+id/btn_fit"
+                    android:layout_width="36dp" android:layout_height="36dp"
+                    android:background="@drawable/bg_ctrl_btn"
+                    android:src="@drawable/ic_fullscreen" android:tint="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- OSD time display -->
+    <TextView android:id="@+id/tv_osd"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_osd"
+        android:textColor="@color/accent2" android:textSize="24sp" android:textStyle="bold"
+        android:paddingStart="24dp" android:paddingEnd="24dp"
+        android:paddingTop="12dp" android:paddingBottom="12dp"
+        android:visibility="gone"/>
+</FrameLayout>

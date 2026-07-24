@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1040857118437",
+    "project_id": "elkhalfy-324b9",
+    "storage_bucket": "elkhalfy-324b9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040857118437:android:97c7108303b157f70d860c",
+        "android_client_info": {
+          "package_name": "com.elkhalfy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCveqPkBHOTFQLg9MDF3RK1EIN66xqBWrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

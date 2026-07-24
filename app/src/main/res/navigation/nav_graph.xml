@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_live">
+    <fragment android:id="@+id/nav_live" android:name="com.elkhalfy.app.ui.live.LiveFragment" android:label="@string/live_tv"/>
+    <fragment android:id="@+id/nav_movies" android:name="com.elkhalfy.app.ui.movies.MoviesFragment" android:label="@string/movies"/>
+    <fragment android:id="@+id/nav_series" android:name="com.elkhalfy.app.ui.series.SeriesFragment" android:label="@string/series"/>
+    <fragment android:id="@+id/nav_matches" android:name="com.elkhalfy.app.ui.matches.MatchesFragment" android:label="@string/matches"/>
+</navigation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Elkhalfy" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/accentd</item>
+        <item name="colorOnPrimary">@color/bg</item>
+        <item name="colorSecondary">@color/accent2</item>
+        <item name="colorOnSecondary">@color/bg</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:textColorSecondary">@color/text2</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Theme.Elkhalfy.Player" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="CategoryButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">13dp</item>
+        <item name="android:paddingEnd">13dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="android:backgroundTint">@color/bg3</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+    <style name="CategoryButton.Active">
+        <item name="android:textColor">@color/accent2</item>
+        <item name="strokeColor">@color/accent</item>
+        <item name="android:backgroundTint">#2DD4AF37</item>
+    </style>
+</resources>

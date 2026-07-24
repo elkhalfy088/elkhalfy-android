@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+        android:background="@color/bg2" android:gravity="center_vertical"
+        android:paddingStart="12dp" android:paddingEnd="12dp">
+        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+            android:src="@drawable/ic_trophy" android:tint="@color/accent"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="8dp"
+            android:text="كرة القدم" android:textColor="@color/text"
+            android:textSize="14sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="40dp"
+        android:background="@color/bg2" android:scrollbars="none"
+        android:paddingStart="8dp" android:paddingEnd="8dp">
+        <LinearLayout android:id="@+id/match_subtabs"
+            android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:orientation="horizontal" android:gravity="center_vertical" android:gap="4dp">
+            <Button android:id="@+id/btn_fixtures"
+                android:layout_width="wrap_content" android:layout_height="32dp"
+                android:text="📅 المباريات" android:textSize="11sp"
+                android:background="@drawable/bg_tab_active"
+                android:textColor="@color/accent2"/>
+            <Button android:id="@+id/btn_live_matches"
+                android:layout_width="wrap_content" android:layout_height="32dp"
+                android:text="🔴 مباشر" android:textSize="11sp"
+                android:background="@drawable/bg_tab_inactive" android:textColor="@color/text2"/>
+            <Button android:id="@+id/btn_standings"
+                android:layout_width="wrap_content" android:layout_height="32dp"
+                android:text="📊 الترتيب" android:textSize="11sp"
+                android:background="@drawable/bg_tab_inactive" android:textColor="@color/text2"/>
+            <Button android:id="@+id/btn_scorers"
+                android:layout_width="wrap_content" android:layout_height="32dp"
+                android:text="⚽ الهدافون" android:textSize="11sp"
+                android:background="@drawable/bg_tab_inactive" android:textColor="@color/text2"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:id="@+id/pane_fixtures"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical">
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="42dp"
+                android:background="@color/bg2" android:scrollbars="none"
+                android:paddingStart="10dp" android:paddingEnd="10dp">
+                <LinearLayout android:id="@+id/date_bar"
+                    android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:gap="6dp"/>
+            </HorizontalScrollView>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_fixtures"
+                android:layout_width="match_parent" android:layout_height="0dp"
+                android:layout_weight="1" android:overScrollMode="never"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_live_matches"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:overScrollMode="never" android:visibility="gone"/>
+
+        <LinearLayout android:id="@+id/pane_standings"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:visibility="gone">
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="42dp"
+                android:background="@color/bg2" android:scrollbars="none"
+                android:paddingStart="10dp" android:paddingEnd="10dp">
+                <LinearLayout android:id="@+id/stand_tabs"
+                    android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:gap="6dp"/>
+            </HorizontalScrollView>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_standings"
+                android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/pane_scorers"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:visibility="gone">
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="42dp"
+                android:background="@color/bg2" android:scrollbars="none"
+                android:paddingStart="10dp" android:paddingEnd="10dp">
+                <LinearLayout android:id="@+id/scorer_tabs"
+                    android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:gap="6dp"/>
+            </HorizontalScrollView>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_scorers"
+                android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

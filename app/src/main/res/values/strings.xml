@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Elkhalfy</string>
+    <string name="live_tv">القنوات</string>
+    <string name="movies">الأفلام</string>
+    <string name="series">المسلسلات</string>
+    <string name="matches">المباريات</string>
+    <string name="search">بحث</string>
+    <string name="loading">جارٍ التحميل...</string>
+    <string name="error_load">تعذر التحميل</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="no_results">لا توجد نتائج</string>
+    <string name="live">مباشر</string>
+    <string name="all">الكل</string>
+    <string name="search_channel">ابحث عن قناة...</string>
+    <string name="search_movie">ابحث عن فيلم...</string>
+    <string name="search_series">ابحث عن مسلسل...</string>
+    <string name="play">تشغيل</string>
+    <string name="episodes">الحلقات</string>
+    <string name="season">الموسم</string>
+    <string name="episode">الحلقة</string>
+    <string name="fixtures">المباريات</string>
+    <string name="standings">الترتيب</string>
+    <string name="top_scorers">الهدافون</string>
+    <string name="no_server">لا يوجد سيرفر</string>
+    <string name="today">اليوم</string>
+    <string name="yesterday">أمس</string>
+    <string name="tomorrow">غداً</string>
+    <string name="clear_cache">مسح الكاش وإعادة التحميل</string>
+    <string name="channels_count">قناة</string>
+    <string name="top_rated">⭐ الأعلى تقييماً</string>
+    <string name="live_now">🔴 مباشر</string>
+    <string name="match_details">تفاصيل المباراة</string>
+    <string name="goals">⚽ الأهداف</string>
+    <string name="cards">🟨 البطاقات</string>
+    <string name="no_events">لا أحداث</string>
+    <string name="no_live">لا توجد مباريات مباشرة</string>
+</resources>
